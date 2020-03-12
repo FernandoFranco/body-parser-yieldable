@@ -1,6 +1,6 @@
 {
   "name": "body-parser-yieldable",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "body-parse with yieldable-json option",
   "main": "index.js",
   "author": "Fernando Franco <atr.franco@gmail.com>",
@@ -8,8 +8,8 @@
   "repository": "https://github.com/FernandoFranco/body-parser-yieldable.git",
   "scripts": {
     "test": "mocha --require test/support/env --reporter spec --check-leaks --bail test/",
-    "test-cov": "nyc node_modules/mocha/bin/_mocha -- --require test/support/env --reporter dot --check-leaks test/",
-    "test-travis": "nyc node_modules/mocha/bin/_mocha --report lcovonly -- --require test/support/env --reporter spec --check-leaks test/"
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --require test/support/env --reporter dot --check-leaks test/",
+    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --require test/support/env --reporter spec --check-leaks test/"
   },
   "dependencies": {
     "bytes": "3.1.0",
