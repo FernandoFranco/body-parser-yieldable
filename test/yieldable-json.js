@@ -74,8 +74,13 @@ describe('bodyParserYieldable()', function () {
     before(async function () {
       this.server = createServer();
 
-      this.badTokenError = await parseError('{:');
-      this.incompleteError = await parseError('{"user"');
+      var self = this;
+      parseError('{:').then(function parsedError(err) {
+        self.badTokenError = err;
+      });
+      parseError('{"user"').then(function parsedError(err) {
+        self.incompleteError = err;
+      });
     })
 
     it('should 400 for bad token', function (done) {
@@ -216,7 +221,10 @@ describe('bodyParserYieldable()', function () {
       before(async function () {
         this.server = createServer();
 
-        this.primitivesError = await parseError('#rue');
+        var self = this;
+        parseError('#rue').then(function parsedError(err) {
+          self.badTokeprimitivesErrornError = err;
+        });
       })
 
       it('should 400 on primitives', function (done) {
@@ -246,9 +254,18 @@ describe('bodyParserYieldable()', function () {
       before(async function () {
         this.server = createServer({ strict: true })
 
-        this.notParsePrimitivesError = await parseError('#rue');
-        this.notParsePrimitivesWithLeadingWhitespacesError = await parseError('    #rue');
-        this.includeCorrectMessageInStackTrace = await parseError('#rue');
+        var self = this;
+        parseError('#rue').then(function parsedError(err) {
+          self.notParsePrimitivesError = err;
+        });
+        
+        parseError('    #rue').then(function parsedError(err) {
+          self.notParsePrimitivesWithLeadingWhitespacesError = err;
+        });
+        
+        parseError('#rue').then(function parsedError(err) {
+          self.includeCorrectMessageInStackTrace = err;
+        });
       })
 
       it('should not parse primitives', function (done) {
