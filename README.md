@@ -182,9 +182,9 @@ app.use(bodyParser.text({ type: 'text/html' }));
 
 [npm-image]: https://img.shields.io/npm/v/body-parser-yieldable.svg
 [npm-url]: https://npmjs.org/package/body-parser-yieldable
-[travis-image]: https://img.shields.io/travis/expressjs/body-parser-yieldable/master.svg
-[travis-url]: https://travis-ci.org/expressjs/body-parser-yieldable
-[coveralls-image]: https://img.shields.io/coveralls/expressjs/body-parser-yieldable/master.svg
-[coveralls-url]: https://coveralls.io/r/expressjs/body-parser-yieldable?branch=master
+[travis-image]: https://img.shields.io/travis/FernandoFranco/body-parser-yieldable/master.svg
+[travis-url]: https://travis-ci.org/FernandoFranco/body-parser-yieldable
+[coveralls-image]: https://img.shields.io/coveralls/FernandoFranco/body-parser-yieldable/master.svg
+[coveralls-url]: https://coveralls.io/r/FernandoFranco/body-parser-yieldable?branch=master
 [downloads-image]: https://img.shields.io/npm/dm/body-parser-yieldable.svg
 [downloads-url]: https://npmjs.org/package/body-parser-yieldable
