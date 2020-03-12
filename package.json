@@ -1,6 +1,6 @@
 {
   "name": "body-parser-yieldable",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "body-parse with yieldable-json option",
   "main": "index.js",
   "author": "Fernando Franco <atr.franco@gmail.com>",
@@ -14,7 +14,9 @@
   "dependencies": {
     "bytes": "3.1.0",
     "content-type": "~1.0.4",
+    "debug": "2.6.9",
     "http-errors": "1.7.3",
+    "iconv-lite": "0.4.24",
     "on-finished": "~2.3.0",
     "raw-body": "2.4.1",
     "type-is": "~1.6.18",
