@@ -5,7 +5,7 @@
 [![Build Status][travis-image]][travis-url]
 [![Test Coverage][coveralls-image]][coveralls-url]
 
-Node.js body parsing middleware with yieldable-parse 100% based in [body-parser](https://github.com/expressjs/body-parser), change JSON.parse to [yieldable-json](https://github.com/ibmruntimes/yieldable-json).
+Node.js body parsing middleware with [yieldable-json](https://github.com/ibmruntimes/yieldable-json) 100% based in [body-parser](https://github.com/expressjs/body-parser).
 
 Parse incoming request bodies in a middleware before your handlers, available
 under the `req.body` property.
