@@ -81,7 +81,10 @@ before_script:
     npm -s ls ||:
 script:
   - |
-    npm run-script test-travis
+    # Run test script, depending on istanbul install
+    if npm_module_installed 'istanbul'; then npm run-script test-travis
+    else npm test
+    fi
 after_script:
   - |
     # Upload coverage to coveralls if exists
