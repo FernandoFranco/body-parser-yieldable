@@ -1,6 +1,6 @@
 {
   "name": "body-parser-yieldable",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "body-parse with yieldable-json option",
   "main": "index.js",
   "author": "Fernando Franco <atr.franco@gmail.com>",

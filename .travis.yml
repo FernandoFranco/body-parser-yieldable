@@ -61,6 +61,7 @@ before_install:
     fi
   - |
     # Configure istanbul for coverage
+    echo node_version_lt
     if node_version_lt '4.9'; then npm_remove_module_re '^istanbul$'
     fi
   - |
