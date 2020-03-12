@@ -56,22 +56,16 @@ before_install:
     npm_remove_module_re '^fast-url-parser$'
   # Setup Node.js version-specific dependencies
   - |
-    # Configure eslint for linting
-    if node_version_lt '8.0'; then npm_remove_module_re '^eslint(-|$)'
-    fi
-  - |
     # Configure istanbul for coverage
-    echo node_version_lt
-    if node_version_lt '4.9'; then npm_remove_module_re '^istanbul$'
-    fi
+    npm_remove_module_re '^istanbul$'
   - |
     # Configure mocha for testing
-    if node_version_lt '4.9' ; then npm_use_module 'mocha' '3.5.3'
+    if node_version_lt '4.0' ; then npm_use_module 'mocha' '3.5.3'
     elif node_version_lt '6.0' ; then npm_use_module 'mocha' '5.2.0'
     fi
   - |
     # Configure supertest for http calls
-    if node_version_lt '4.9' ; then npm_use_module 'supertest' '2.0.0'
+    if node_version_lt '4.0' ; then npm_use_module 'supertest' '2.0.0'
     elif node_version_lt '6.0' ; then npm_use_module 'supertest' '3.4.2'
     fi
   # Update Node.js modules
@@ -87,14 +81,7 @@ before_script:
     npm -s ls ||:
 script:
   - |
-    # Run test script, depending on istanbul install
-    if npm_module_installed 'istanbul'; then npm run-script test-travis
-    else npm test
-    fi
-  - |
-    # Run linting, if eslint exists
-    if npm_module_installed 'eslint'; then npm run-script lint
-    fi
+    npm run-script test-travis
 after_script:
   - |
     # Upload coverage to coveralls if exists
