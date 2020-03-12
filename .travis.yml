@@ -9,7 +9,6 @@ node_js:
   - "10.16"
   - "11.15"
   - "12.7"
-sudo: false
 cache:
   directories:
     - node_modules
@@ -62,18 +61,16 @@ before_install:
     fi
   - |
     # Configure istanbul for coverage
-    if node_version_lt '0.10'; then npm_remove_module_re '^istanbul$'
+    if node_version_lt '4.0'; then npm_remove_module_re '^istanbul$'
     fi
   - |
     # Configure mocha for testing
-    if   node_version_lt '0.10'; then npm_use_module 'mocha' '2.5.3'
-    elif node_version_lt '4.0' ; then npm_use_module 'mocha' '3.5.3'
+    if node_version_lt '4.0' ; then npm_use_module 'mocha' '3.5.3'
     elif node_version_lt '6.0' ; then npm_use_module 'mocha' '5.2.0'
     fi
   - |
     # Configure supertest for http calls
-    if   node_version_lt '0.10'; then npm_use_module 'supertest' '1.1.0'
-    elif node_version_lt '4.0' ; then npm_use_module 'supertest' '2.0.0'
+    if node_version_lt '4.0' ; then npm_use_module 'supertest' '2.0.0'
     elif node_version_lt '6.0' ; then npm_use_module 'supertest' '3.4.2'
     fi
   # Update Node.js modules
@@ -83,7 +80,7 @@ before_install:
       npm prune
       npm rebuild
     fi
-before_scrpt:
+before_script:
   - |
     # Contents of node_modules
     npm -s ls ||:
