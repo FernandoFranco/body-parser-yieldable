@@ -223,7 +223,7 @@ describe('bodyParserYieldable()', function () {
 
         var self = this;
         parseError('#rue').then(function parsedError(err) {
-          self.badTokeprimitivesErrornError = err;
+          self.primitivesError = err;
         });
       })
 
