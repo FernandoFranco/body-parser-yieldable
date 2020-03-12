@@ -84,6 +84,6 @@ after_script:
   - |
     # Upload coverage to coveralls if exists
     if [[ -e ./coverage/lcov.info ]]; then
-      npm install --save-dev coveralls@2
-      coveralls < ./coverage/lcov.info
+      npm install --save-dev coveralls
+      nyc report --reporter=text-lcov | coveralls
     fi
