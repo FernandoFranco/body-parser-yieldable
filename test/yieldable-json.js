@@ -71,7 +71,7 @@ describe('bodyParserYieldable()', function () {
   })
 
   describe('when JSON is invalid', function () {
-    before(async function () {
+    before(function () {
       this.server = createServer();
 
       var self = this;
@@ -218,7 +218,7 @@ describe('bodyParserYieldable()', function () {
 
   describe('with strict option', function () {
     describe('when undefined', function () {
-      before(async function () {
+      before(function () {
         this.server = createServer();
 
         var self = this;
@@ -251,7 +251,7 @@ describe('bodyParserYieldable()', function () {
     })
 
     describe('when true', function () {
-      before(async function () {
+      before(function () {
         this.server = createServer({ strict: true })
 
         var self = this;
